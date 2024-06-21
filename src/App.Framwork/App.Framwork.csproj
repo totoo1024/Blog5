@@ -1,25 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspectCore.Core" Version="2.1.0" />
-    <PackageReference Include="AspectCore.Extensions.Autofac" Version="2.1.0" />
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="EasyCaching.Core" Version="1.1.0" />
-    <PackageReference Include="EasyCaching.CSRedis" Version="1.1.0" />
-    <PackageReference Include="EasyCaching.InMemory" Version="1.1.0" />
-    <PackageReference Include="EasyCaching.Interceptor.AspectCore" Version="1.1.0" />
-    <PackageReference Include="EasyCaching.Serialization.Json" Version="1.1.0" />
-    <PackageReference Include="EasyCaching.Serialization.MessagePack" Version="1.1.0" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="9.3.0" />
-    <PackageReference Include="log4net" Version="2.0.12" />
-    <PackageReference Include="Mapster" Version="7.0.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="5.0.0" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+    <PackageReference Include="AspectCore.Core" Version="2.2.0" />
+    <PackageReference Include="AspectCore.Extensions.Autofac" Version="2.2.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+    <PackageReference Include="EasyCaching.Core" Version="1.5.1" />
+    <PackageReference Include="EasyCaching.CSRedis" Version="1.5.1" />
+    <PackageReference Include="EasyCaching.InMemory" Version="1.5.1" />
+    <PackageReference Include="EasyCaching.Interceptor.AspectCore" Version="1.5.1" />
+    <PackageReference Include="EasyCaching.Serialization.Json" Version="1.5.1" />
+    <PackageReference Include="EasyCaching.Serialization.MessagePack" Version="1.5.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
+    <PackageReference Include="log4net" Version="2.0.14" />
+    <PackageReference Include="Mapster" Version="7.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
 </Project>

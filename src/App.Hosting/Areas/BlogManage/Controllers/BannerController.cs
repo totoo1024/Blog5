@@ -47,7 +47,7 @@ namespace App.Hosting.Areas.BlogManage.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAccess]
-        public IActionResult UploadImg([FromServices] IHostingEnvironment env)
+        public IActionResult UploadImg([FromServices] IHostEnvironment env)
         {
             string path;
             try
@@ -57,7 +57,7 @@ namespace App.Hosting.Areas.BlogManage.Controllers
                 string fileExtension = Path.GetExtension(fileName);
                 if (".jpg.png.gif.jpeg".Contains(fileExtension))
                 {
-                    string savePath = env.WebRootPath + "/Uploads/Resource";
+                    string savePath = env.ContentRootPath + "/Uploads/Resource";
                     if (!Directory.Exists(savePath))
                     {
                         Directory.CreateDirectory(savePath);

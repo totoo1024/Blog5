@@ -100,11 +100,11 @@ namespace App.Hosting.Controllers
         /// <summary>
         /// 时间轴
         /// </summary>
-        /// <param name="page"></param>
+        /// <param name="pageInput"></param>
         /// <returns></returns>
-        public IActionResult Line(PageInputDto page)
+        public IActionResult Line(PageInputDto pageInput)
         {
-            var result = _timeLineService.GetListByPage(null, "PublishDate desc", page.Page, page.Limit);
+            var result = _timeLineService.GetListByPage(null, x => x.PublishDate, true, pageInput.Page, pageInput.Limit);
             var data = result;
             IEnumerable<int> years = data.Select(s => s.PublishDate.Year).Distinct().OrderByDescending(o => o);
             List<TimeLineDto> times = new List<TimeLineDto>();

@@ -15,7 +15,7 @@
     <link href="~/js/layui/css/layui.css" rel="stylesheet" />
     <link href="~/web/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="~/css/public.css" rel="stylesheet" />
-    @RenderSection("css", false)
+    @await RenderSectionAsync("css", false)
 </head>
 <body>
     <form class="layui-form" id="domainform" lay-filter="form">
@@ -73,6 +73,6 @@
         </div>
     </script>
 
-    @RenderSection("script", false)
+    @await RenderSectionAsync("script", false)
 </body>
 </html>

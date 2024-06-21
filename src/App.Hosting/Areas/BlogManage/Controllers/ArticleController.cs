@@ -75,7 +75,7 @@ namespace App.Hosting.Areas.BlogManage.Controllers
         [HttpPost]
         [AllowAccess]
         [Description("文章上传缩略图")]
-        public IActionResult Thumbnail([FromServices] IHostingEnvironment env)
+        public IActionResult Thumbnail([FromServices] IWebHostEnvironment env)
         {
             UnifyResult<string> result = new UnifyResult<string>();
             try
@@ -129,7 +129,7 @@ namespace App.Hosting.Areas.BlogManage.Controllers
         [HttpPost]
         [AllowAccess]
         [Description("富文本编辑器上传资源")]
-        public IActionResult upload([FromServices] IHostingEnvironment env)
+        public IActionResult upload([FromServices] IWebHostEnvironment env)
         {
             try
             {
@@ -137,9 +137,9 @@ namespace App.Hosting.Areas.BlogManage.Controllers
                 //最大文件大小
                 int maxSize = 2048;
                 //文件保存目录路径
-                string savePath = "/Uploads/attached/";
+                string savePath = "Uploads\\attached\\";
                 //文件保存目录URL
-                string saveUrl = "/Uploads/attached/";
+                string saveUrl = "Uploads/attached/";
                 //定义允许上传的文件扩展名
                 Hashtable extTable = new Hashtable();
                 extTable.Add("image", "gif,jpg,jpeg,png,bmp");
@@ -151,7 +151,7 @@ namespace App.Hosting.Areas.BlogManage.Controllers
                 {
                     return Json(new { error = 1, message = "请选择文件" });
                 }
-                string dirPath = env.WebRootPath + savePath;
+                string dirPath = Path.Combine(env.WebRootPath, savePath);
                 if (!Directory.Exists(dirPath))
                 {
                     return Json(new { error = 1, message = "上传目录不存在" });
@@ -201,7 +201,7 @@ namespace App.Hosting.Areas.BlogManage.Controllers
                     fs.Flush();
                 }
 
-                string fileUrl = saveUrl + newFileName;
+                string fileUrl = "/" + saveUrl + newFileName;
                 return Json(new { error = 0, url = fileUrl });
             }
             catch (Exception ex)
@@ -211,7 +211,7 @@ namespace App.Hosting.Areas.BlogManage.Controllers
         }
         [AllowAccess]
         [Description("富文本编辑器上传文件配置")]
-        public IActionResult config([FromServices] IHostingEnvironment env, string dir, string path, string order)
+        public IActionResult config([FromServices] IWebHostEnvironment env, string dir, string path, string order)
         {
             string currentPath = "";
             string currentUrl = "";

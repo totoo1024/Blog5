@@ -118,11 +118,6 @@ namespace App.Application.Blog
                 .Where(c => c.EnabledMark && tagIds.Contains(c.Id)).Select<TagDto>()
                 .ToList();
 
-            var sql = _leavemsgService.AsQueryable()
-                   .Where(msg => SqlFunc.IsNullOrEmpty(msg.ToUId) && articleIds.Contains(msg.ArticleId))
-                   .GroupBy(msg => msg.ArticleId)
-                   .Select(msg => new { Id = msg.ArticleId, Total = SqlFunc.AggregateCount(msg.ArticleId) }).ToSql();
-
             var msgCount = _leavemsgService.AsQueryable()
                 .Where(msg => SqlFunc.IsNullOrEmpty(msg.ToUId) && articleIds.Contains(msg.ArticleId))
                 .GroupBy(msg => msg.ArticleId).Select(msg => new { Id = msg.ArticleId, Total = SqlFunc.AggregateCount(msg.ArticleId) })

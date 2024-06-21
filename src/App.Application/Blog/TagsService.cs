@@ -56,7 +56,7 @@ namespace App.Application.Blog
                     Color = tag.BGColor,
                     Total = SqlFunc.Subqueryable<ArticleTags>().Where(at => SqlFunc.Subqueryable<ArticleInfo>()
                         .Where(c => tag.Id == at.TagsId && c.Id == at.ArticleId && c.DeleteMark == false && c.Visible).Any()
-                    ).Select(s => SqlFunc.AggregateCount(s.ArticleId))
+                    ).Select(at => SqlFunc.AggregateCount(at.ArticleId))
                 }).ToListAsync();
         }
     }

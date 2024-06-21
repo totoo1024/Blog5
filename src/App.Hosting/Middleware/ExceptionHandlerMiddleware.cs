@@ -4,6 +4,7 @@ using App.Framwork.Log;
 using App.Framwork.Result;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using ILogger = App.Framwork.Log.ILogger;
 
 namespace App.Hosting.Middleware
 {

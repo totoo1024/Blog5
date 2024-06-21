@@ -110,7 +110,7 @@
             <span>
                 <i class="fa fa-tag"></i>&nbsp;&nbsp;
                 {{#  layui.each(d.Tags, function(i, curr){}}
-                <a href="/article/list?tid={{curr.TagId}}" class="flag"> {{curr.TagName}}</a>
+                <a href="/article/list?tid={{curr.Id}}" class="flag"> {{curr.TagName}}</a>
                 {{#  }); }}
             </span>
             <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;{{d.ReadTimes}}</span>

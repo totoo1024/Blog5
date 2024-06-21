@@ -135,21 +135,21 @@ namespace App.Application.Blog
         {
             if (string.IsNullOrWhiteSpace(dto.ParentId) || dto.RootId == dto.ParentId)
             {
-                if (await AnyAsync(c => c.Id == dto.RootId))
+                if (!await AnyAsync(c => c.Id == dto.RootId))
                 {
                     return "请选择回复内容";
                 }
             }
             else
             {
-                if (await Repository.AnyAsync(c => c.Id == dto.RootId || c.Id == dto.ParentId))
+                if (!await Repository.AnyAsync(c => c.Id == dto.RootId || c.Id == dto.ParentId))
                 {
                     return "请选择回复内容";
                 }
             }
             if (!string.IsNullOrWhiteSpace(dto.ArticleId))
             {
-                if (await AnyAsync(c => c.ArticleId == dto.ArticleId))
+                if (!await AnyAsync(c => c.ArticleId == dto.ArticleId))
                 {
                     return "评论的文章不存在";
                 }

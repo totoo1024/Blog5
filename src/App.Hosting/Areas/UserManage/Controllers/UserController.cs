@@ -76,7 +76,7 @@ namespace App.Hosting.Areas.UserManage.Controllers
         [HttpPost]
         [Description("上传系统用户头像")]
         [AllowAccess]
-        public ActionResult Upload([FromServices] IHostingEnvironment env)
+        public ActionResult Upload([FromServices] IWebHostEnvironment env)
         {
             var file = Request.Form.Files[0];
             string fileName = Path.GetFileName(file.FileName);

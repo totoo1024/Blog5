@@ -1,4 +1,4 @@
-﻿var layedit;
+var layedit;
 layui.use(['flow', 'layedit', 'laytpl'], function () {
     var flow = layui.flow, $ = layui.$, laytpl = layui.laytpl, form = layui.form;
     layedit = layui.layedit
@@ -82,7 +82,7 @@ layui.use(['flow', 'layedit', 'laytpl'], function () {
                         });
                         $.get("/home/login", "", function (result) {
                             layer.close(loading);
-                            if (result.StatusCode === 0) {
+                            if (result.StatusCode === 200) {
                                 window.location.href = result.Data;
                             } else {
                                 layer.msg(result.Message, { icon: 5 });
@@ -119,7 +119,7 @@ layui.use(['flow', 'layedit', 'laytpl'], function () {
             data: data.field,
             success: function (res) {
                 layer.close(loading);
-                if (res.Status == 0) {
+                if (res.Status == 200) {
                     showmsg();
                     btnReplyClick(this);
                     layer.msg("回复成功", {

@@ -1,5 +1,6 @@
 # Blog
 
+#  :fire: 注意： **已升级到最新的 .NET 6版本**
 ## 预览地址
  **[https://www.37czone.com](https://www.37czone.com)** 
 
@@ -7,10 +8,10 @@
 后台预览账号/密码：root/123456（请勿修改密码）
 
 #### 介绍
-博客网站是基于.NET 5.0开发的跨平台Web应用，可以部署在Windows、Linux、docker等多种环境中
+个人博客网站
 
 #### 软件架构
-网站已升级到最新的.NET Core 5.0，已集成Redis、Autofac、Mapster映射、FluentValidation验证组件（支持自带model验证）、集成极验行为验证、layui开发，由于前端能力有限，所以没有使用前后端分离，博客基本功能已经全部完成（异常日志只记录在了文件中）
+网站已升级到最新的 **.NET6** ，已集成Redis、Autofac、Mapster映射、FluentValidation验证组件（支持自带model验证）、集成极验行为验证、layui开发，由于前端能力有限，所以没有使用前后端分离，博客基本功能已经全部完成（异常日志只记录在了文件中）
 相对于[.NET Core 2.2](https://gitee.com/miss_you/Blog/tree/master/)版本简化了，日志组件还没有时间集成，以后有时间会补上，站点已经可以正常运行（已经部署在docker中），点击下方地址即可访问
 [博客地址](https://www.37czone.com) https://www.37czone.com
 [后台地址](https://[输入链接说明](https://www.37czone.com/main)) https://www.37czone.com/main
@@ -20,7 +21,7 @@
 
 #### 使用说明
 
-1. 网站使用的sqlsugar ORM开源框架，相关文档请查看官网[sqlsugar框架](http://www.codeisbug.com/)，数据库使用的是mysql(项目根目录db文件夹下有SqlServer的脚本，账号密码分别是admin/123456)，ORM支持7种数据库（MySql、SqlServer、Sqlite、Oracle、Postgresql、达梦、人大金仓），所以可以随意切换，具体请看sqlsugar官网文档
+1. 网站使用的sqlsugar ORM开源框架，相关文档请查看官网[sqlsugar框架](https://www.donet5.com/)，数据库使用的是mysql，ORM支持7种数据库（MySql、SqlServer、Sqlite、Oracle、Postgresql、达梦、人大金仓），所以可以随意切换，具体请看sqlsugar官网文档
 2. 数据库备份以及脚本放在db目录下，执行任意一项即可，数据库表中仅将所有主键统一成“Id”,项目中后台管理员登录用户名/密码:admin/admin1024
 3. 写代码都有详细注释，这里就不一一介绍
 4. 创建数据库后记得修改appsettings.json文件中的数据库连接字符串
@@ -32,8 +33,12 @@
 
 如果有什么BUG还希望大家提交到Issues，我看到会及时修复。
 
+#### 开发利器推荐
+:point_right: [Resharper](https://www.jetbrains.com/resharper/) https://www.jetbrains.com/resharper/ 
+
 前台预览
 ![前台预览](https://images.gitee.com/uploads/images/2019/0122/094841_7b096768_967952.png "37℃空间-个人博客.png")
 
 后台预览![后台预览](https://images.gitee.com/uploads/images/2019/0122/095015_2d0d64ad_967952.png "后台管理系统.png")
-
+因为不是经常在线，无法及时回复网友的问题，很多网友想入群交流，特此新建交流群，有需要的可以进群交流，也可以及时回复
+![交流群](https://images.gitee.com/uploads/images/2021/1122/151656_044b09d9_967952.png "屏幕截图.png")

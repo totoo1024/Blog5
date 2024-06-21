@@ -99,7 +99,6 @@ namespace App.Application.User
         /// <returns></returns>
         public async Task<UnifyResult<AuthUser>> Login(LoginInputDto dto)
         {
-            var query = Repository.Db.Queryable<SysAccount, SysUser>((a, u) => a.Id == u.AccountId);
             var account = await GetAccountDetails(a => a.UserName == dto.UserName);
             if (account == null)
             {
